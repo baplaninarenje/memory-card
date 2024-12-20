@@ -4,4 +4,8 @@
 
 #root {
   background-color: var(--app-background-color);
+  padding: 3.4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 3.4vw;
 }
