@@ -1,3 +1,5 @@
+import './HeaderLeftSection.css';
+
 function HeaderLeftSection() {
   return (
     <section id="header-left-section">
