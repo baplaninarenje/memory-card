@@ -1,0 +1,12 @@
+#header-right-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+#header-right-section p {
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+#header-right-section span {
+  padding-left: 10px;
+}
