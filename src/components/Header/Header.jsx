@@ -1,3 +1,4 @@
+import './Header.css';
 import HeaderLeftSection from './HeaderLeftSection/HeaderLeftSection';
 import HeaderRightSection from './HeaderRightSection/HeaderRightSection';
 
