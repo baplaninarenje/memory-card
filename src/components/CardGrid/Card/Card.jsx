@@ -1,3 +1,5 @@
+import './Card.css';
+
 function Card() {
   return (
     <button className="card" aria-label="Memory card showing TBA">
