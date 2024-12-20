@@ -7,3 +7,7 @@ header {
   flex-direction: column;
   gap: 3.4vw;
 }
+
+header p {
+  font-size: clamp(1rem, 1.8vw, 1.8rem);
+}
