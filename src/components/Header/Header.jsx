@@ -1,5 +1,5 @@
 import HeaderLeftSection from './HeaderLeftSection/HeaderLeftSection';
-import HeaderRightSection from './HeaderRighttSection/HeaderRightSection';
+import HeaderRightSection from './HeaderRightSection/HeaderRightSection';
 
 function Header() {
   return (
