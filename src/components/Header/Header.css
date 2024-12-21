@@ -2,7 +2,7 @@ header {
   background-image: var(--header-background-image);
   color: darkgoldenrod;
   font-family: 'Acme', serif;
-  padding: 3.4vw;
+  padding: var(--app-padding);
   display: flex;
   flex-direction: column;
   gap: 3.4vw;
