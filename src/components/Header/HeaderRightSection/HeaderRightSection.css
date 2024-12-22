@@ -6,3 +6,15 @@
 #header-right-section span {
   padding-left: 10px;
 }
+
+/* tablet */
+@media (min-width: 500px) {
+  #header-right-section {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #header-right-section p {
+    white-space: nowrap;
+  }
+}

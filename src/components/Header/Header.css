@@ -11,3 +11,11 @@ header {
 header p {
   font-size: clamp(1rem, 1.8vw, 1.8rem);
 }
+
+/* tablet */
+@media (min-width: 500px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
