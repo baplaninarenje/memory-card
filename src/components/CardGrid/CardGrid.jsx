@@ -1,23 +1,55 @@
 import './CardGrid.css';
 import Card from './Card/Card';
+import { generateRandomNumbers } from '../../utils/utils';
+import { useEffect } from 'react';
+import { useState } from 'react';
+
+const serverUrl = 'https://pokeapi.co/api/v2/';
+const endpoint = 'pokemon/';
+const randomNumbers = generateRandomNumbers();
+let ignore = false;
 
 function CardGrid() {
-  return (
-    <main>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </main>
-  );
+  const [imgs, setImgs] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async (randomNumber) => {
+      try {
+        const response = await fetch(serverUrl + endpoint + randomNumber);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const result = await response.json();
+
+        setImgs((oldImgs) => [
+          ...oldImgs,
+          {
+            id: randomNumber,
+            imgTxt: result.name,
+            imgSrc: result.sprites.other['official-artwork']['front_default'],
+          },
+        ]);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    if (!ignore) {
+      randomNumbers.forEach((randomNumber) => {
+        fetchData(randomNumber);
+      });
+    }
+    return () => {
+      ignore = true;
+    };
+  }, []);
+
+  const cards = imgs.map((img) => {
+    const { imgTxt, imgSrc, id } = img;
+    return <Card key={id} imgTxt={imgTxt} imgSrc={imgSrc} />;
+  });
+
+  return <main>{cards}</main>;
 }
 
 export default CardGrid;
