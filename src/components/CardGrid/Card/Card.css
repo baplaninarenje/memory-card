@@ -5,6 +5,11 @@
   cursor: pointer;
 }
 
+.card:hover,
+.card:focus {
+  box-shadow: 0px 0px 40px var(--golden-color);
+}
+
 .card,
 .card img {
   border-radius: 15px;
