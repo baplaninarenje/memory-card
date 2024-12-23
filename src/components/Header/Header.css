@@ -1,6 +1,6 @@
 header {
   background: var(--header-background-image);
-  color: darkgoldenrod;
+  color: var(--golden-color);
   font-family: 'Acme', serif;
   padding: var(--app-padding);
   display: flex;
