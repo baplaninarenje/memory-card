@@ -1,8 +1,12 @@
 import './Card.css';
 
-function Card({ imgTxt, imgSrc }) {
+function Card({ imgTxt, imgSrc, onCardClick }) {
   return (
-    <button className="card" aria-label={'Memory card showing ' + imgTxt}>
+    <button
+      onClick={onCardClick}
+      className="card"
+      aria-label={'Memory card showing ' + imgTxt + ' pokemon'}
+    >
       <figure>
         <img
           loading="lazy"

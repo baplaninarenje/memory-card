@@ -12,4 +12,13 @@ function generateRandomNumbers() {
   return randomNumbers;
 }
 
-export { generateRandomNumbers };
+const shuffleCards = (imgs, setImgs) => {
+  const shuffledCards = [...imgs];
+  for (let i = shuffledCards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledCards[i], shuffledCards[j]] = [shuffledCards[j], shuffledCards[i]];
+  }
+  setImgs(shuffledCards);
+};
+
+export { generateRandomNumbers, shuffleCards };

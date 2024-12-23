@@ -1,6 +1,6 @@
 import './CardGrid.css';
 import Card from './Card/Card';
-import { generateRandomNumbers } from '../../utils/utils';
+import { generateRandomNumbers, shuffleCards } from '../../utils/utils';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
@@ -13,7 +13,7 @@ function CardGrid() {
   const [imgs, setImgs] = useState([]);
 
   useEffect(() => {
-    const fetchData = async (randomNumber) => {
+    const fetchAndParseImgData = async (randomNumber) => {
       try {
         const response = await fetch(serverUrl + endpoint + randomNumber);
         if (!response.ok) {
@@ -36,7 +36,7 @@ function CardGrid() {
     };
     if (!ignore) {
       randomNumbers.forEach((randomNumber) => {
-        fetchData(randomNumber);
+        fetchAndParseImgData(randomNumber);
       });
     }
     return () => {
@@ -46,7 +46,15 @@ function CardGrid() {
 
   const cards = imgs.map((img) => {
     const { imgTxt, imgSrc, id } = img;
-    return <Card key={id} imgTxt={imgTxt} imgSrc={imgSrc} />;
+    return (
+      <Card
+        key={id}
+        imgTxt={imgTxt}
+        imgSrc={imgSrc}
+        id={id}
+        onCardClick={() => shuffleCards(imgs, setImgs)}
+      />
+    );
   });
 
   return <main>{cards}</main>;
