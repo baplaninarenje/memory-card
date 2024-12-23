@@ -6,3 +6,11 @@ main {
   align-items: center;
   gap: var(--app-padding);
 }
+
+/* tablet */
+@media (min-width: 500px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
