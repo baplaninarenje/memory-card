@@ -1,5 +1,6 @@
 .card {
-  all: unset;
+  padding: 0;
+  border: none;
   background-color: var(--card-background-color);
   cursor: pointer;
 }
