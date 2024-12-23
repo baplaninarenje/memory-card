@@ -1,15 +1,15 @@
 header {
-  background-image: var(--header-background-image);
+  background: var(--header-background-image);
   color: darkgoldenrod;
   font-family: 'Acme', serif;
   padding: var(--app-padding);
   display: flex;
   flex-direction: column;
-  gap: 3.4vw;
+  gap: var(--app-padding);
 }
 
 header p {
-  font-size: clamp(1rem, 1.8vw, 1.8rem);
+  font-size: clamp(1rem, 1.6vw, 1.5rem);
 }
 
 /* tablet */
@@ -17,5 +17,14 @@ header p {
   header {
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+
+/* desktop */
+@media (min-width: 1000px) {
+  header {
+    padding: var(--app-padding-desktop-device);
+    padding-bottom: 0;
+    gap: var(--app-padding-desktop-device);
   }
 }

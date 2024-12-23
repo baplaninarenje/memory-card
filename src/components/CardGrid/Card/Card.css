@@ -26,3 +26,11 @@
   font-weight: bold;
   color: var(--white-color);
 }
+
+/* desktop */
+@media (min-width: 1000px) {
+  .card figcaption {
+    padding: 5px 5px 10px;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+  }
+}

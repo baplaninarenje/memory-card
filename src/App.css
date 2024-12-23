@@ -4,11 +4,25 @@
   --white-color: #fff;
   --header-background-image: linear-gradient(#000, #3e6623);
   --app-padding: 3.4vw;
+  --app-padding-desktop-device: 0.8vw;
+}
+
+body {
+  background-color: var(--app-background-color);
 }
 
 #root {
-  background-color: var(--app-background-color);
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 3.4vw;
+  gap: var(--app-padding);
+}
+
+/* desktop */
+@media (min-width: 1000px) {
+  #root {
+    gap: var(--app-padding-desktop-device);
+  }
 }

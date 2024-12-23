@@ -7,3 +7,10 @@
 #header-left-section h1 {
   font-size: clamp(2rem, 5vw, 50px);
 }
+
+/* desktop */
+@media (min-width: 1000px) {
+  #header-left-section {
+    gap: var(--app-padding-desktop-device);
+  }
+}
