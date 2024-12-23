@@ -1,17 +1,17 @@
 import './Card.css';
 
-function Card() {
+function Card({ imgTxt, imgSrc }) {
   return (
-    <button className="card" aria-label="Memory card showing TBA">
+    <button className="card" aria-label={'Memory card showing ' + imgTxt}>
       <figure>
         <img
           loading="lazy"
           width={475}
           height={475}
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png"
-          alt="TBA"
+          src={imgSrc}
+          alt={imgTxt}
         />
-        <figcaption>TBA</figcaption>
+        <figcaption>{imgTxt}</figcaption>
       </figure>
     </button>
   );
