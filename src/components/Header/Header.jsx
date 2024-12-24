@@ -2,11 +2,13 @@ import './Header.css';
 import HeaderLeftSection from './HeaderLeftSection/HeaderLeftSection';
 import HeaderRightSection from './HeaderRightSection/HeaderRightSection';
 
-function Header() {
+function Header({ registerOfClickedCardsIDs }) {
   return (
     <header>
       <HeaderLeftSection />
-      <HeaderRightSection />
+      <HeaderRightSection
+        registerOfClickedCardsIDs={registerOfClickedCardsIDs}
+      />
     </header>
   );
 }

@@ -1,9 +1,21 @@
 import './Card.css';
 
-function Card({ imgTxt, imgSrc, onCardClick }) {
+function Card({
+  id,
+  imgTxt,
+  imgSrc,
+  onCardClick,
+  setRegisterOfClickedCardsIDs,
+}) {
   return (
     <button
-      onClick={onCardClick}
+      onClick={() => {
+        onCardClick();
+        setRegisterOfClickedCardsIDs((oldIDs) => {
+          if (oldIDs.includes(id)) return [];
+          else return [...oldIDs, id];
+        });
+      }}
       className="card"
       aria-label={'Memory card showing ' + imgTxt + ' pokemon'}
       onTouchStart={(e) => e.currentTarget.classList.add('touch')}
