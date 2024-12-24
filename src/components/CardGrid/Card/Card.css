@@ -5,10 +5,10 @@
   cursor: pointer;
 }
 
-.card:hover,
-.card:focus-visible {
+.card:focus-visible,
+.card:active {
   box-shadow: 0px 0px 40px var(--golden-color);
-  border: black solid 1px;
+  transform: scale(0.99);
 }
 
 .card,
@@ -37,6 +37,10 @@
 
 /* desktop */
 @media (min-width: 1000px) {
+  .card:hover {
+    box-shadow: 0px 0px 40px var(--golden-color);
+  }
+
   .card figcaption {
     padding: 5px 5px 10px;
     font-size: clamp(1rem, 1.5vw, 1.5rem);
