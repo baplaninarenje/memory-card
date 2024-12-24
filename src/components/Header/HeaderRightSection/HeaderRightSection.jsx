@@ -7,7 +7,7 @@ function HeaderRightSection() {
         Current Score:<span>0</span>
       </p>
       <p>
-        Best score:<span>0</span>
+        Best Score:<span>0</span>
       </p>
     </section>
   );
