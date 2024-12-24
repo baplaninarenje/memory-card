@@ -5,16 +5,21 @@ function Card({
   imgTxt,
   imgSrc,
   onCardClick,
+  registerOfClickedCardsIDs,
   setRegisterOfClickedCardsIDs,
+  bestScore,
+  setBestScore,
 }) {
   return (
     <button
       onClick={() => {
         onCardClick();
-        setRegisterOfClickedCardsIDs((oldIDs) => {
-          if (oldIDs.includes(id)) return [];
-          else return [...oldIDs, id];
-        });
+        if (registerOfClickedCardsIDs.includes(id)) {
+          if (bestScore < registerOfClickedCardsIDs.length) {
+            setBestScore(registerOfClickedCardsIDs.length);
+          }
+          setRegisterOfClickedCardsIDs([]);
+        } else setRegisterOfClickedCardsIDs((oldIDs) => [...oldIDs, id]);
       }}
       className="card"
       aria-label={'Memory card showing ' + imgTxt + ' pokemon'}

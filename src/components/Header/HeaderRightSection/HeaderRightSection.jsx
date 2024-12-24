@@ -1,13 +1,13 @@
 import './HeaderRightSection.css';
 
-function HeaderRightSection({ registerOfClickedCardsIDs }) {
+function HeaderRightSection({ registerOfClickedCardsIDs, bestScore }) {
   return (
     <section id="header-right-section">
       <p>
         Current Score:<span>{registerOfClickedCardsIDs.length}</span>
       </p>
       <p>
-        Best Score:<span>0</span>
+        Best Score:<span>{bestScore}</span>
       </p>
     </section>
   );

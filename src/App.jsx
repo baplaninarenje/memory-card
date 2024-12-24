@@ -7,10 +7,20 @@ function App() {
   const [registerOfClickedCardsIDs, setRegisterOfClickedCardsIDs] = useState(
     []
   );
+  const [bestScore, setBestScore] = useState(0);
+
   return (
     <>
-      <Header registerOfClickedCardsIDs={registerOfClickedCardsIDs} />
-      <CardGrid setRegisterOfClickedCardsIDs={setRegisterOfClickedCardsIDs} />
+      <Header
+        registerOfClickedCardsIDs={registerOfClickedCardsIDs}
+        bestScore={bestScore}
+      />
+      <CardGrid
+        registerOfClickedCardsIDs={registerOfClickedCardsIDs}
+        setRegisterOfClickedCardsIDs={setRegisterOfClickedCardsIDs}
+        bestScore={bestScore}
+        setBestScore={setBestScore}
+      />
     </>
   );
 }

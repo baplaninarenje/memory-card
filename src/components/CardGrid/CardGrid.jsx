@@ -9,7 +9,12 @@ const endpoint = 'pokemon/';
 const randomNumbers = generateRandomNumbers();
 let ignore = false;
 
-function CardGrid({ setRegisterOfClickedCardsIDs }) {
+function CardGrid({
+  registerOfClickedCardsIDs,
+  setRegisterOfClickedCardsIDs,
+  bestScore,
+  setBestScore,
+}) {
   const [imgs, setImgs] = useState([]);
 
   useEffect(() => {
@@ -53,7 +58,10 @@ function CardGrid({ setRegisterOfClickedCardsIDs }) {
         imgSrc={imgSrc}
         id={id}
         onCardClick={() => shuffleCards(imgs, setImgs)}
+        registerOfClickedCardsIDs={registerOfClickedCardsIDs}
         setRegisterOfClickedCardsIDs={setRegisterOfClickedCardsIDs}
+        bestScore={bestScore}
+        setBestScore={setBestScore}
       />
     );
   });
