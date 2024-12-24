@@ -6,6 +6,8 @@ function Card({ imgTxt, imgSrc, onCardClick }) {
       onClick={onCardClick}
       className="card"
       aria-label={'Memory card showing ' + imgTxt + ' pokemon'}
+      onTouchStart={(e) => e.currentTarget.classList.add('touch')}
+      onTouchEnd={(e) => e.currentTarget.classList.remove('touch')}
     >
       <figure>
         <img
