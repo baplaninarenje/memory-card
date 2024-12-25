@@ -2,6 +2,7 @@
   display: flex;
   padding: 0;
   border: none;
+  border-radius: 15px;
   background-color: var(--card-background-color);
   cursor: pointer;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -13,11 +14,6 @@
   box-shadow: 0px 0px 40px var(--golden-color);
   transform: scale(0.98);
   transition: 0.1s;
-}
-
-.card,
-.card img {
-  border-radius: 15px;
 }
 
 .card figure {
