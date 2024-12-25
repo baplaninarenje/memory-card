@@ -18,32 +18,31 @@ function CardGrid({
   const [imgs, setImgs] = useState([]);
 
   useEffect(() => {
-    const fetchAndParseImgData = async (randomNumber) => {
+    const fetchAndParseImgData = async () => {
       try {
-        const response = await fetch(serverUrl + endpoint + randomNumber);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
+        const imagePromises = randomNumbers.map(async (randomNumber) => {
+          const response = await fetch(serverUrl + endpoint + randomNumber);
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
 
-        const result = await response.json();
-
-        setImgs((oldImgs) => [
-          ...oldImgs,
-          {
+          const result = await response.json();
+          return {
             id: randomNumber,
             imgTxt: result.name,
             imgSrc: result.sprites.other['official-artwork']['front_default'],
-          },
-        ]);
+          };
+        });
+
+        const imageData = await Promise.all(imagePromises);
+        setImgs(imageData);
       } catch (error) {
         console.error(error);
       }
     };
-    if (!ignore) {
-      randomNumbers.forEach((randomNumber) => {
-        fetchAndParseImgData(randomNumber);
-      });
-    }
+
+    if (!ignore) fetchAndParseImgData();
+
     return () => {
       ignore = true;
     };
