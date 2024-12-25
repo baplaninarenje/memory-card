@@ -10,17 +10,21 @@ function Card({
   bestScore,
   setBestScore,
 }) {
+  const handleCardClick = () => {
+    onCardClick();
+    if (registerOfClickedCardsIDs.includes(id)) {
+      if (bestScore < registerOfClickedCardsIDs.length) {
+        setBestScore(registerOfClickedCardsIDs.length);
+      }
+      setRegisterOfClickedCardsIDs([]);
+    } else {
+      setRegisterOfClickedCardsIDs((oldIDs) => [...oldIDs, id]);
+    }
+  };
+
   return (
     <button
-      onClick={() => {
-        onCardClick();
-        if (registerOfClickedCardsIDs.includes(id)) {
-          if (bestScore < registerOfClickedCardsIDs.length) {
-            setBestScore(registerOfClickedCardsIDs.length);
-          }
-          setRegisterOfClickedCardsIDs([]);
-        } else setRegisterOfClickedCardsIDs((oldIDs) => [...oldIDs, id]);
-      }}
+      onClick={handleCardClick}
       className="card"
       aria-label={'Memory card showing ' + imgTxt + ' pokemon'}
       onTouchStart={(e) => e.currentTarget.classList.add('touch')}
