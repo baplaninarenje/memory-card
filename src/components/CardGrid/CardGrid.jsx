@@ -14,6 +14,8 @@ function CardGrid({
   setRegisterOfClickedCardsIDs,
   bestScore,
   setBestScore,
+  setIsModalOpen,
+  cardsTabIndex,
 }) {
   const [imgs, setImgs] = useState([]);
 
@@ -61,6 +63,8 @@ function CardGrid({
         setRegisterOfClickedCardsIDs={setRegisterOfClickedCardsIDs}
         bestScore={bestScore}
         setBestScore={setBestScore}
+        setIsModalOpen={setIsModalOpen}
+        cardsTabIndex={cardsTabIndex}
       />
     );
   });

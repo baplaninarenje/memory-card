@@ -9,6 +9,8 @@ function Card({
   setRegisterOfClickedCardsIDs,
   bestScore,
   setBestScore,
+  setIsModalOpen,
+  cardsTabIndex,
 }) {
   const handleCardClick = () => {
     onCardClick();
@@ -17,9 +19,14 @@ function Card({
         setBestScore(registerOfClickedCardsIDs.length);
       }
       setRegisterOfClickedCardsIDs([]);
+      setIsModalOpen(true);
     } else {
       setRegisterOfClickedCardsIDs((oldIDs) => [...oldIDs, id]);
     }
+  };
+
+  const handlePreventEnterOnInvalidTab = (e) => {
+    if (cardsTabIndex === -1 && e.key === 'Enter') e.preventDefault();
   };
 
   return (
@@ -29,6 +36,8 @@ function Card({
       aria-label={'Memory card showing ' + imgTxt || 'an unknown' + ' Pokémon'}
       onTouchStart={(e) => e.currentTarget.classList.add('touch')}
       onTouchEnd={(e) => e.currentTarget.classList.remove('touch')}
+      tabIndex={cardsTabIndex}
+      onKeyDown={handlePreventEnterOnInvalidTab}
     >
       <figure>
         <img
