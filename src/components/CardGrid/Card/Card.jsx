@@ -31,10 +31,14 @@ function Card({
           loading="lazy"
           width={475}
           height={475}
-          src={imgSrc}
+          src={imgSrc || '/fallback-image.png'}
           alt={imgTxt}
         />
-        <figcaption>{imgTxt}</figcaption>
+        <figcaption>
+          {imgTxt || (
+            <small>Unable to load Pokémon image. Please try again later.</small>
+          )}
+        </figcaption>
       </figure>
     </button>
   );
