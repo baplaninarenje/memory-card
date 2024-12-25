@@ -1,16 +1,13 @@
-function generateRandomNumbers() {
-  const randomNumbers = [];
+const generateRandomNumbers = () => {
+  const randomNumbers = new Set();
 
-  while (randomNumbers.length < 12) {
+  while (randomNumbers.size < 12) {
     const randomNum = Math.floor(Math.random() * 1000) + 1;
-
-    if (!randomNumbers.includes(randomNum)) {
-      randomNumbers.push(randomNum);
-    }
+    randomNumbers.add(randomNum);
   }
 
-  return randomNumbers;
-}
+  return Array.from(randomNumbers);
+};
 
 const shuffleCards = (imgs, setImgs) => {
   const shuffledCards = [...imgs];
