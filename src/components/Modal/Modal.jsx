@@ -16,7 +16,7 @@ function Modal({ isOpen, onClose }) {
         aria-describedby="modal-message"
       >
         <section className="modal-header">
-          <h2 id="modal-title">Sequence Broken!</h2>
+          <h2 id="modal-title">Game Over!</h2>
           <button
             className="modal-close-button"
             onClick={onClose}
