@@ -2,14 +2,11 @@ import './Header.css';
 import HeaderLeftSection from './HeaderLeftSection/HeaderLeftSection';
 import HeaderRightSection from './HeaderRightSection/HeaderRightSection';
 
-function Header({ registerOfClickedCardsIDs, bestScore }) {
+function Header({ currentScore, bestScore }) {
   return (
     <header>
       <HeaderLeftSection />
-      <HeaderRightSection
-        registerOfClickedCardsIDs={registerOfClickedCardsIDs}
-        bestScore={bestScore}
-      />
+      <HeaderRightSection currentScore={currentScore} bestScore={bestScore} />
     </header>
   );
 }

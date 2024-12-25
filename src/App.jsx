@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Header
-        registerOfClickedCardsIDs={registerOfClickedCardsIDs}
+        currentScore={registerOfClickedCardsIDs.length}
         bestScore={bestScore}
       />
       <CardGrid
