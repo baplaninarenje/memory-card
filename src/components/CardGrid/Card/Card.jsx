@@ -26,7 +26,7 @@ function Card({
     <button
       onClick={handleCardClick}
       className="card"
-      aria-label={'Memory card showing ' + imgTxt + ' pokemon'}
+      aria-label={'Memory card showing ' + imgTxt || 'an unknown' + ' Pokémon'}
       onTouchStart={(e) => e.currentTarget.classList.add('touch')}
       onTouchEnd={(e) => e.currentTarget.classList.remove('touch')}
     >
@@ -36,7 +36,7 @@ function Card({
           width={475}
           height={475}
           src={imgSrc || '/fallback-image.png'}
-          alt={imgTxt}
+          alt={imgTxt || 'Pokémon image not available'}
         />
         <figcaption>
           {imgTxt || (
