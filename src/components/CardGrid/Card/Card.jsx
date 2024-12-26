@@ -45,7 +45,11 @@ function Card({
           width={475}
           height={475}
           src={imgSrc || '/fallback-image.png'}
-          alt={imgTxt || 'Pokémon image not available'}
+          alt={
+            imgTxt
+              ? `${imgTxt}, a Pokemon creature`
+              : 'Pokémon image not available'
+          }
         />
         <figcaption>
           {imgTxt || (
